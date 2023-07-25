@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sys/resource.h>
 using namespace std;
 
 int main()
@@ -8,18 +9,18 @@ int main()
     int parity = 0;
     while (input)
     {
-        if (input % 2 == 1)
+        if ((input & 1))
         {
             parity++;
         }
         input = input >> 1;
     }
-    if (parity % 2 == 0)
+    if (parity & 1)
     {
-        cout << 0;
+        cout << 1;
     }
     else
     {
-        cout << 1;
+        cout << 0;
     }
 }
